@@ -16,6 +16,13 @@ export default {
         getData: async () => ({
           alumni,
         }),
+        children: alumni.map(a => ({
+          path: `/${a.slug}`,
+          component: 'src/containers/AlumniDetail',
+          getData: () => ({
+            alumni: a,
+          }),
+        })),
       },
       {
         is404: true,
