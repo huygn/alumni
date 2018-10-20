@@ -4,7 +4,7 @@ import { Link, withRouteData } from 'react-static'
 const Home = withRouteData(({ alumni: items }) => {
   const alumni = Array(40)
     .fill(null)
-    .map(_ => (() => items[Math.floor(Math.random() * items.length)])())
+    .map(_ => items[Math.floor(Math.random() * items.length)])
   const half = Math.floor(alumni.length / 2)
   const firstHalf = alumni.slice(0, half)
   const secondHalf = alumni.slice(half, alumni.length)
