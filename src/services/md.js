@@ -1,7 +1,7 @@
 import path from 'path'
 import fs from 'fs'
 import klaw from 'klaw'
-import matter from 'gray-matter'
+import yaml from 'js-yaml'
 import slugify from 'slugify'
 
 const resolvePath = arg => path.resolve(__dirname, `../../content/${arg}`)
@@ -21,11 +21,12 @@ export async function getAlumni({ dirname = 'alumni' } = {}) {
     klaw(resolvePath(dirname))
       .on('data', item => {
         // Filter function to retrieve .md files
-        if (path.extname(item.path) === '.md') {
+        if (path.extname(item.path) === '.yml') {
           // If markdown file, read contents
           const data = fs.readFileSync(item.path, 'utf8')
           // Convert to frontmatter object
-          const dataObj = matter(data).data
+          // const dataObj = matter(data).data
+          const dataObj = yaml.safeLoad(data)
           // Create slug for URL
           dataObj.slug = slugify(dataObj.name, { lower: true })
           // Push object into items array
