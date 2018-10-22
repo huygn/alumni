@@ -11,10 +11,10 @@ const Home = withRouteData(({ alumni: items }) => {
   console.log(alumni)
 
   return (
-    <div className="min-h-screen bg-orange-lightest pt-16 pb-24 font-serif">
+    <div className="min-h-screen pt-16 pb-24 ">
       <div className="container max-w-md">
-        <h1 className="text-5xl font-medium text-center mb-8">Alumni</h1>
-        <p className="italic text-center mb-16">
+        <h1 className="text-5xl font-medium text-left mb-8">Alumni</h1>
+        <p className="italic text-left mb-16">
           Neque porro quisquam est qui dolorem ipsum quia dolor sit amet,
           consectetur, adipisci velit...
         </p>
@@ -22,7 +22,7 @@ const Home = withRouteData(({ alumni: items }) => {
           <div className="col w-full">
             <ul className="list-reset">
               {firstHalf.map((e, i) => (
-                <li key={i} className="mb-6 text-center text-lg">
+                <li key={i} className="mb-6 text-left text-lg">
                   <div>
                     <Link
                       to={e.slug}

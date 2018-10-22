@@ -190,6 +190,7 @@ module.exports = {
 
   fonts: {
     sans: [
+      'Avenir_Next',
       'Source Sans Pro',
       'system-ui',
       'BlinkMacSystemFont',

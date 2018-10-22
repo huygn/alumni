@@ -20,7 +20,7 @@ const RenderRoutes = ({ getComponentForPath }) => (
 )
 
 const App = () => (
-  <main className="font-sans font-normal text-black leading-normal">
+  <main className="font-sans font-medium text-black leading-normal">
     <Router>
       <Routes>{RenderRoutes}</Routes>
     </Router>
