@@ -12,12 +12,16 @@ const Home = withRouteData(({ alumni: items }) => {
 
   return (
     <div className="min-h-screen pt-16 pb-24 ">
-      <div className="container max-w-md">
+      <div className="container max-w-lg">
         <h1 className="text-5xl font-medium text-left mb-8">Alumni</h1>
-        <p className="italic text-left mb-16">
-          Neque porro quisquam est qui dolorem ipsum quia dolor sit amet,
-          consectetur, adipisci velit...
-        </p>
+        <div>
+          <p className="italic text-left mb-16">
+            The mastodon network that connected the Dwarves society -{' '}
+            <a href="https://daf.ug" className="text-blue">
+              daf.ug
+            </a>
+          </p>
+        </div>
         <div className="row flex">
           <div className="col w-full">
             <ul className="list-reset">

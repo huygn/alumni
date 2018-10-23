@@ -37,7 +37,7 @@ export async function getAlumni({ dirname = 'alumni' } = {}) {
         reject(e)
       })
       .on('end', () => {
-        resolve(items)
+        resolve(items.sort((a, b) => a.name.localeCompare(b.name)))
       })
   })
 
