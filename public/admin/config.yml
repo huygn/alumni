@@ -19,15 +19,15 @@ collections:
       - label: 'Tags'
         name: 'tags'
         widget: 'list'
-        field:
+        fields:
           - label: 'Tag'
-            name: 'tag'
-            widget: 'string'
+            name: tag
+            widget: string
       - label: 'Links'
         name: 'links'
         widget: 'list'
-        field:
-          - label: 'Link name'
+        fields:
+          - label: 'Link'
             name: 'link'
             widget: object
             fields:
