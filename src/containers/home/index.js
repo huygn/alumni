@@ -42,7 +42,7 @@ const Home = withRouteData(({ alumni }) => {
                     ))}
                   </div>
                   <div className="leading-none">
-                    {(e.tags || []).map((tag, index) => (
+                    {(e.tags || []).filter(Boolean).map((tag, index) => (
                       <small key={index}>
                         {index !== 0 ? ' · ' : ''}
                         {tag}
