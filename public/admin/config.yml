@@ -2,7 +2,9 @@ backend:
   name: github
   repo: huygn/alumni
   branch: master
-  site_domain: cms.netlify.com
+  # site_domain: cms.netlify.com
+
+# publish_mode: editorial_workflow
 
 media_folder: 'public/img/uploads'
 
