@@ -1,7 +1,7 @@
 import webpack from './webpack.config'
 import Document from './src/Document'
 import { siteRoot } from './src/config'
-import { getAlumni } from './src/services/md'
+import { getAlumni } from './src/services/content'
 
 export default {
   siteRoot: siteRoot,
