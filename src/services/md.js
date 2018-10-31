@@ -27,6 +27,7 @@ export async function getAlumni({ dirname = 'alumni' } = {}) {
           // Convert to frontmatter object
           // const dataObj = matter(data).data
           const dataObj = yaml.safeLoad(data)
+          dataObj.name = dataObj.title
           // Create slug for URL
           dataObj.slug = slugify(dataObj.name, { lower: true })
           // Push object into items array
