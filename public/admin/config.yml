@@ -1,0 +1,39 @@
+backend:
+  name: github
+  repo: huygn/alumni
+  branch: master
+  site_domain: cms.netlify.com
+
+media_folder: 'public/img/uploads'
+
+collections:
+  - name: 'alumni' # Used in routes, e.g., /admin/collections/blog
+    label: 'Alumni' # Used in the UI
+    folder: 'content/alumni' # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: '{{year}}-{{month}}-{{day}}-{{hour}}-{{minute}}__{{slug}}'
+    format: yaml
+    fields:
+      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'alumni' }
+      - { label: 'Name', name: 'title', widget: 'string' }
+      - label: 'Tags'
+        name: 'tags'
+        widget: 'list'
+        field:
+          - label: 'Tag'
+            name: 'tag'
+            widget: 'string'
+      - label: 'Links'
+        name: 'links'
+        widget: 'list'
+        field:
+          - label: 'Link name'
+            name: 'link'
+            widget: object
+            fields:
+              - label: Name
+                name: name
+                widget: string
+              - label: URL
+                name: url
+                widget: string
