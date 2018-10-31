@@ -27,7 +27,7 @@ const Home = withRouteData(({ alumni }) => {
                     >
                       {e.name}
                     </Link>
-                    {(e.links || []).map((link, index) => (
+                    {(e.links || []).map(({ link = {} }, index) => (
                       <small key={index}>
                         <a
                           href={link.url}
