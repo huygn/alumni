@@ -34,19 +34,19 @@ const Home = withRouteData(({ alumni: items }) => {
                     >
                       {e.name}
                     </Link>
-                    {Object.keys(e.urls).map((key, index) => (
-                      <small key={key}>
-                        <a
-                          href={e.urls[key]}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-indigo-light"
-                        >
-                          {index !== 0 ? ' · ' : ''}
-                          {key}
-                        </a>
-                      </small>
-                    ))}
+                    {/* {Object.keys(e.urls).map((key, index) => ( */}
+                    {/*   <small key={key}> */}
+                    {/*     <a */}
+                    {/*       href={e.urls[key]} */}
+                    {/*       target="_blank" */}
+                    {/*       rel="noopener noreferrer" */}
+                    {/*       className="text-indigo-light" */}
+                    {/*     > */}
+                    {/*       {index !== 0 ? ' · ' : ''} */}
+                    {/*       {key} */}
+                    {/*     </a> */}
+                    {/*   </small> */}
+                    {/* ))} */}
                   </div>
                   <div className="leading-none">
                     {e.tags.map((tag, index) => (
@@ -60,20 +60,6 @@ const Home = withRouteData(({ alumni: items }) => {
               ))}
             </ul>
           </div>
-          {/* <div className="col w-1/2">
-              <ul className="list-reset">
-              {secondHalf.map((e, i) => (
-              <li key={i} className="my-1 text-center">
-              <Link
-              to={e.slug}
-              className="text-lg text-blue hover:underline"
-              >
-              {e.name}
-              </Link>
-              </li>
-              ))}
-              </ul>
-              </div> */}
         </div>
       </div>
     </div>
