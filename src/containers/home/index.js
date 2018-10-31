@@ -1,15 +1,8 @@
 import React from 'react'
 import { Link, withRouteData } from 'react-static'
 
-const Home = withRouteData(({ alumni: items }) => {
-  const alumni = Array(40)
-    .fill(null)
-    .map(_ => items[Math.floor(Math.random() * items.length)])
-  const half = Math.floor(alumni.length / 2)
-  const firstHalf = alumni.slice(0, half)
-  /* const secondHalf = alumni.slice(half, alumni.length) */
+const Home = withRouteData(({ alumni }) => {
   console.log(alumni)
-
   return (
     <div className="min-h-screen pt-16 pb-24 ">
       <div className="container max-w-lg">
@@ -25,7 +18,7 @@ const Home = withRouteData(({ alumni: items }) => {
         <div className="row flex">
           <div className="col w-full">
             <ul className="list-reset">
-              {firstHalf.map((e, i) => (
+              {alumni.map((e, i) => (
                 <li key={i} className="mb-6 text-left text-lg">
                   <div>
                     <Link
@@ -34,22 +27,22 @@ const Home = withRouteData(({ alumni: items }) => {
                     >
                       {e.name}
                     </Link>
-                    {/* {Object.keys(e.urls).map((key, index) => ( */}
-                    {/*   <small key={key}> */}
-                    {/*     <a */}
-                    {/*       href={e.urls[key]} */}
-                    {/*       target="_blank" */}
-                    {/*       rel="noopener noreferrer" */}
-                    {/*       className="text-indigo-light" */}
-                    {/*     > */}
-                    {/*       {index !== 0 ? ' · ' : ''} */}
-                    {/*       {key} */}
-                    {/*     </a> */}
-                    {/*   </small> */}
-                    {/* ))} */}
+                    {(e.links || []).map((link, index) => (
+                      <small key={index}>
+                        <a
+                          href={link.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-indigo-light"
+                        >
+                          {index !== 0 ? ' · ' : ''}
+                          {link.name}
+                        </a>
+                      </small>
+                    ))}
                   </div>
                   <div className="leading-none">
-                    {e.tags.map((tag, index) => (
+                    {(e.tags || []).map((tag, index) => (
                       <small key={index}>
                         {index !== 0 ? ' · ' : ''}
                         {tag}
