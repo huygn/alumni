@@ -1,0 +1,16 @@
+layout: alumni
+title: Phung Van Dat
+tags:
+  - Engineer
+  - Intern
+links:
+  - link:
+      name: github
+      url: 'https://github.com/phungvandat'
+  - link:
+      name: LinkedIn
+      url: 'https://www.linkedin.com/in/phungvandat'
+  - link:
+      name: Certificate
+      url: >-
+        https://github.com/dwarvesf/team/blob/master/internship/2018/10-PhungVanDat.pdf
