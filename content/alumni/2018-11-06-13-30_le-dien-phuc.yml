@@ -1,0 +1,16 @@
+layout: alumni
+title: Le Dien Phuc
+tags:
+  - Engineer
+  - Intern
+links:
+  - link:
+      name: github
+      url: 'https://github.com/phucledien'
+  - link:
+      name: LinkedIn
+      url: 'https://www.linkedin.com/in/phucledien/'
+  - link:
+      name: Certificate
+      url: >-
+        https://github.com/dwarvesf/team/blob/master/internship/2018/02-LeDienPhuc.pdf
