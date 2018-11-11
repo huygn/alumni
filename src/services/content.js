@@ -31,7 +31,10 @@ export async function getAlumni({ dirname = 'alumni' } = {}) {
           // Create slug for URL
           dataObj.slug = slugify(dataObj.name, { lower: true })
           // Push object into items array
-          items.push(dataObj)
+          items.push({
+            ...dataObj,
+            links: (dataObj.links || []).map(l => l.link),
+          })
         }
       })
       .on('error', e => {
