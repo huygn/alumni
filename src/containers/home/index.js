@@ -4,7 +4,7 @@ import Alumni from './Alumni'
 const Home = () => {
   return (
     <div className="">
-      <section className="min-h-screen pt-32 pb-16 flex flex-col justify-center items-center">
+      <section className="min-h-screen pt-16 pb-24 flex flex-col justify-center items-center">
         <div className="container lg:w-1/2">
           <h1 className="section-heading text-center mb-6">
             The mastodon network that connected the Dwarves society.
