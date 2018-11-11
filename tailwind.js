@@ -23,7 +23,28 @@ View the full documentation at https://tailwindcss.com.
 |
 */
 
-// let defaultConfig = require('tailwindcss/defaultConfig')();
+let defaultConfig = require('tailwindcss/defaultConfig')()
+
+let preset = require('@dwarvesf/tailwind-plugins/presets/dwarves-2018')({
+  gutter: '2.5rem',
+  breakpoints: {
+    sm: '576px',
+    md: '768px',
+    lg: '992px',
+    xl: '1200px',
+  },
+  additionalColors: {
+    black: '#23252C',
+    primary: '#e13f5e',
+    'primary-light': '#E38B9D',
+    'primary-lightest': '#F8D9DF',
+    // greys
+    'dusty-gray': '#9B9B9B',
+    alto: '#d8d8d8',
+    alabaster: '#f8f8f8',
+  },
+  useCssVars: true,
+})
 
 /*
 |-------------------------------------------------------------------------------
@@ -42,90 +63,8 @@ View the full documentation at https://tailwindcss.com.
 */
 
 let colors = {
-  current: 'currentColor',
-  transparent: 'transparent',
-
-  black: '#22292f',
-  'grey-darkest': '#3d4852',
-  'grey-darker': '#606f7b',
-  'grey-dark': '#8795a1',
-  grey: '#b8c2cc',
-  'grey-light': '#dae1e7',
-  'grey-lighter': '#f1f5f8',
-  'grey-lightest': '#f8fafc',
-  white: '#ffffff',
-
-  'red-darkest': '#3b0d0c',
-  'red-darker': '#621b18',
-  'red-dark': '#cc1f1a',
-  red: '#e3342f',
-  'red-light': '#ef5753',
-  'red-lighter': '#f9acaa',
-  'red-lightest': '#fcebea',
-
-  'orange-darkest': '#462a16',
-  'orange-darker': '#613b1f',
-  'orange-dark': '#de751f',
-  orange: '#f6993f',
-  'orange-light': '#faad63',
-  'orange-lighter': '#fcd9b6',
-  'orange-lightest': '#fff5eb',
-
-  'yellow-darkest': '#453411',
-  'yellow-darker': '#684f1d',
-  'yellow-dark': '#f2d024',
-  yellow: '#ffed4a',
-  'yellow-light': '#fff382',
-  'yellow-lighter': '#fff9c2',
-  'yellow-lightest': '#fcfbeb',
-
-  'green-darkest': '#0f2f21',
-  'green-darker': '#1a4731',
-  'green-dark': '#1f9d55',
-  green: '#38c172',
-  'green-light': '#51d88a',
-  'green-lighter': '#a2f5bf',
-  'green-lightest': '#e3fcec',
-
-  'teal-darkest': '#0d3331',
-  'teal-darker': '#20504f',
-  'teal-dark': '#38a89d',
-  teal: '#4dc0b5',
-  'teal-light': '#64d5ca',
-  'teal-lighter': '#a0f0ed',
-  'teal-lightest': '#e8fffe',
-
-  'blue-darkest': '#12283a',
-  'blue-darker': '#1c3d5a',
-  'blue-dark': '#2779bd',
-  blue: '#3490dc',
-  'blue-light': '#6cb2eb',
-  'blue-lighter': '#bcdefa',
-  'blue-lightest': '#eff8ff',
-
-  'indigo-darkest': '#191e38',
-  'indigo-darker': '#2f365f',
-  'indigo-dark': '#5661b3',
-  indigo: '#6574cd',
-  'indigo-light': '#7886d7',
-  'indigo-lighter': '#b2b7ff',
-  'indigo-lightest': '#e6e8ff',
-
-  'purple-darkest': '#21183c',
-  'purple-darker': '#382b5f',
-  'purple-dark': '#794acf',
-  purple: '#9561e2',
-  'purple-light': '#a779e9',
-  'purple-lighter': '#d6bbfc',
-  'purple-lightest': '#f3ebff',
-
-  'pink-darkest': '#451225',
-  'pink-darker': '#6f213f',
-  'pink-dark': '#eb5286',
-  pink: '#f66d9b',
-  'pink-light': '#fa7ea8',
-  'pink-lighter': '#ffbbca',
-  'pink-lightest': '#ffebef',
+  ...defaultConfig.colors,
+  ...preset.config.colors,
 }
 
 module.exports = {
@@ -164,10 +103,7 @@ module.exports = {
   */
 
   screens: {
-    sm: '576px',
-    md: '768px',
-    lg: '992px',
-    xl: '1200px',
+    ...preset.config.screens,
   },
 
   /*
@@ -190,7 +126,7 @@ module.exports = {
 
   fonts: {
     sans: [
-      'Avenir_Next',
+      'AvenirNext',
       'Source Sans Pro',
       'system-ui',
       'BlinkMacSystemFont',
@@ -258,6 +194,8 @@ module.exports = {
     '4xl': '2.25rem', // 36px
     '5xl': '3rem', // 48px
     '6xl': '3.5rem', // 56px
+    //
+    '40': '2.5rem',
   },
 
   /*
@@ -303,6 +241,7 @@ module.exports = {
     none: 1,
     tight: 1.25,
     normal: 1.5,
+    relax: 1.75,
     loose: 2,
   },
 
@@ -470,6 +409,7 @@ module.exports = {
     '48': '12rem',
     '64': '16rem',
     '112': '28rem',
+    '128': '32rem',
     '1/2': '50%',
     '1/3': '33.33333%',
     '2/3': '66.66667%',
@@ -482,6 +422,8 @@ module.exports = {
     '1/6': '16.66667%',
     '5/6': '83.33333%',
     '1/7': '14.285%',
+    '3/7': '42.85714%',
+    '4/7': '57.14285%',
     '1/12': '8.33333%',
     '5/12': '41.66666%',
     '7/12': '58.33333%',
@@ -519,14 +461,32 @@ module.exports = {
     '13': '3.25rem',
     '14': '3.5rem',
     '16': '4rem',
+    '20': '4rem',
+    '22': '5rem',
     '24': '6rem',
     '28': '7rem',
     '30': '7.5rem',
     '32': '8rem',
+    '40': '10rem',
     '48': '12rem',
     '64': '16rem',
+    '80': '20rem',
+    '96': '24rem',
+    '100': '25rem',
+    '112': '28rem',
+    '114': '28.5rem',
+    '128': '32rem',
+    '160': '40rem',
+    '192': '48rem',
+    '200': '50rem',
     full: '100%',
+    '1/2': '50%',
     screen: '100vh',
+    //
+    'screen-50vw': '50vw',
+    //
+    '125px': '125px',
+    '220px': '220px',
   },
 
   /*
@@ -546,6 +506,7 @@ module.exports = {
   minWidth: {
     '0': '0',
     full: '100%',
+    'screen-50': '50vw',
   },
 
   /*
@@ -582,6 +543,7 @@ module.exports = {
     '32': '8rem',
     '48': '12rem',
     '64': '16rem',
+    '200': '50rem',
     full: '100%',
     screen: '100vh',
   },
@@ -613,6 +575,8 @@ module.exports = {
     '4xl': '90rem',
     '5xl': '100rem',
     full: '100%',
+    //
+    '720px': '720px',
   },
 
   /*
@@ -662,13 +626,17 @@ module.exports = {
     '9': '2.25rem', // 36px
     '10': '2.5rem', // 40px
     '11': '2.75rem', // 44px
+    '12': '3rem', // 64px
+    '14': '3.5rem',
     '16': '4rem', // 64px
+    '18': '4.5rem',
     '20': '5rem', // 80px
     '24': '6rem', // 96px
     '25': '6.25rem', // 100px
     '26': '6.5rem', // 104px
     '32': '8rem', // 128px
     '40': '10rem', // 160px
+    '48': '12rem',
   },
 
   /*
@@ -702,6 +670,7 @@ module.exports = {
     '12': '3rem',
     '14': '3.5rem',
     '16': '4rem',
+    '18': '4.5rem',
     '20': '5rem',
     '24': '6rem',
     '25': '6.25rem',
@@ -733,6 +702,7 @@ module.exports = {
     '2': '0.5rem',
     '3': '0.75rem',
     '4': '1rem',
+    '5': '1.25rem',
     '6': '1.5rem',
     '8': '2rem',
   },
@@ -782,6 +752,8 @@ module.exports = {
     '30': 30,
     '40': 40,
     '50': 50,
+    //
+    header: 10,
   },
 
   /*
@@ -801,7 +773,9 @@ module.exports = {
     '0': '0',
     '25': '.25',
     '50': '.5',
+    '60': '.6',
     '75': '.75',
+    '80': '.80',
     '100': '1',
   },
 
@@ -881,13 +855,13 @@ module.exports = {
     minHeight: ['responsive'],
     minWidth: ['responsive'],
     negativeMargin: ['responsive'],
-    opacity: ['responsive'],
+    opacity: ['responsive', 'hover'],
     overflow: ['responsive'],
     padding: ['responsive'],
     pointerEvents: ['responsive'],
     position: ['responsive'],
     resize: ['responsive'],
-    shadows: ['responsive'],
+    shadows: ['responsive', 'hover'],
     svgFill: [],
     svgStroke: [],
     textAlign: ['responsive'],
@@ -920,57 +894,5 @@ module.exports = {
   },
 
   // plugins
-  plugins: [
-    require('tailwindcss/plugins/container')({
-      center: true,
-      padding: 'calc(var(--gutter) / 2)',
-    }),
-    function({ config, addUtilities, addComponents }) {
-      addUtilities(
-        {
-          '.object-fill': {
-            objectFit: 'fill',
-          },
-          '.object-contain': {
-            objectFit: 'contain',
-          },
-          '.object-cover': {
-            objectFit: 'cover',
-          },
-        },
-        ['responsive']
-      )
-      addUtilities(
-        {
-          '.-z-1': {
-            zIndex: -1,
-          },
-        },
-        ['responsive']
-      )
-      addUtilities(
-        {
-          '.outline-none': {
-            outline: 'none',
-          },
-        },
-        ['focus']
-      )
-      addUtilities({
-        '.translate-center': {
-          transform: 'translateX(-50%) translateY(-50%)',
-        },
-      })
-      addUtilities({
-        '.overflow-x-hidden': {
-          overflowX: 'hidden',
-        },
-      })
-      addUtilities({
-        '.contain-strict': {
-          contain: 'strict',
-        },
-      })
-    },
-  ],
+  plugins: [...preset.plugins],
 }

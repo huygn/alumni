@@ -21,6 +21,7 @@
     "react-static": "^5.9.12"
   },
   "devDependencies": {
+    "@dwarvesf/tailwind-plugins": "^4.1.0",
     "babel-eslint": "^8.2.2",
     "babel-plugin-macros": "^2.3.0",
     "babel-plugin-transform-imports": "^1.5.0",
@@ -43,7 +44,7 @@
     "sass-loader": "^7.1.0",
     "serve": "^9.4.2",
     "slugify": "^1.3.1",
-    "tailwindcss": "^0.6.6"
+    "tailwindcss": "^0.7.2"
   },
   "resolutions": {
     "react": "16.5.2",
