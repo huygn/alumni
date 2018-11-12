@@ -10,7 +10,7 @@ class TailwindExtractor {
 
 export default new PurgecssPlugin({
   // Specify the locations of any files you want to scan for class names.
-  paths: glob.sync(['src/**/*.js']),
+  paths: glob.sync(['src/**/*.js', 'ignores/**/*.js']),
   extractors: [
     {
       extractor: TailwindExtractor,
