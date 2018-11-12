@@ -10,6 +10,10 @@ const Alumni = withRouteData(({ className = '', alumni = [] }) => {
       [key]: (prev[key] || []).concat(curr),
     }
   }, {})
+
+  // console.log(groupByName)
+  // const col1 = []
+  // const col2 = []
   return (
     <section className={`container ${className}`}>
       <h2 className="section-heading text-center mb-6">Alumni Network</h2>
