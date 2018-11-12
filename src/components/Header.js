@@ -6,7 +6,6 @@ const styles = {
   link: {
     className:
       'col inline-flex items-center no-underline text-black hover:text-primary',
-    activeClassName: 'text-primary',
   },
 }
 
@@ -35,7 +34,7 @@ const Header = ({ className = '', ...rest }) => {
             <Link {...styles.link} {...foundationPath('/works')}>
               Works
             </Link>
-            <Link {...styles.link} to={'/'}>
+            <Link {...styles.link} to={'/'} activeClassName="text-primary">
               Alumni
             </Link>
             <Link {...styles.link} {...foundationPath('/contact')}>

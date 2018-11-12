@@ -17,6 +17,7 @@ const LinkIcon = ({ type = '', ...rest }) => {
     case 'certificate':
       return <FaCertificate {...rest} />
     case 'blog':
+    case 'portfolio':
       return <FaUser {...rest} />
     case 'behance':
       return <FaBehance {...rest} />
