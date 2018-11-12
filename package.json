@@ -26,7 +26,6 @@
     "babel-eslint": "^8.2.2",
     "babel-plugin-macros": "^2.3.0",
     "babel-plugin-transform-imports": "^1.5.0",
-    "cheerio": "^1.0.0-rc.2",
     "eslint-config-prettier": "^2.9.0",
     "eslint-config-standard": "^11.0.0",
     "eslint-plugin-import": "^2.9.0",
