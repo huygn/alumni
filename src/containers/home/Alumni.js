@@ -27,7 +27,7 @@ const Alumni = withRouteData(({ className = '', alumni = [] }) => {
             <ul className="list-reset mx-3">
               {groupByName[key].map((e, i) => (
                 <li key={i} className="py-4 border-b border-grey-light">
-                  <strong className="block text-xl font-semibold leading-tight mb-1">
+                  <strong className="block text-xl font-semibold leading-tight text-grey-darkest mb-1">
                     {e.name}
                   </strong>
                   <div className="flex justify-between items-center">
