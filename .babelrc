@@ -1,6 +1,7 @@
 {
   "extends": "react-static/.babelrc",
   "plugins": [
-    "macros"
+    "macros",
+    "preval"
   ]
 }
