@@ -38,5 +38,8 @@ fs.writeFileSync('./.footer-html.js', "module.exports = '" + html + "'", {
   flag: 'w+',
 })
 
+const s = fs.readFileSync('./.footer-html.js').toString()
+console.log(s)
+
 module.exports = html
 `
