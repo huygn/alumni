@@ -20,7 +20,7 @@ const Alumni = withRouteData(({ className = '', alumni = [] }) => {
       <p className="lg:w-1/2 mx-auto text-center opacity-75 mb-24">{`The woodland used to be home of hundreds of the Dwarves. They are back and become our supporters and advisors. The alumni network keeps growing.`}</p>
       <div>
         {Object.keys(groupByName).map(key => (
-          <div key={key} className="mb-6 mx-auto" style={{ maxWidth: 460 }}>
+          <div key={key} className="mb-6 mx-auto" style={{ maxWidth: 480 }}>
             <strong className="font-semibold text-xl text-dusty-gray block py-1 px-3 bg-alabaster rounded mt-4">
               {key}
             </strong>
