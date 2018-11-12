@@ -5,7 +5,7 @@ const footerHTML = preval`
 const request = require('sync-request')
 const cheerio = require('cheerio')
 
-const res = request('GET', 'https://dwarves.foundation')
+const res = request('GET', 'https://dwarves.foundation', { retry: true })
 const $ = cheerio.load(res.getBody().toString())
 const footer = $('footer').html()
 
