@@ -3,7 +3,8 @@ import { Router, Route } from 'react-static'
 import Routes from 'react-static-routes'
 
 import '@/css/tailwind.scss'
-import '@/utils/loading'
+import StickyHeader from '@/components/StickyHeader'
+import Footer from '@/components/PageFooter'
 
 // renderer for `<Routes>`
 const RenderRoutes = ({ getComponentForPath }) => (
@@ -14,7 +15,10 @@ const RenderRoutes = ({ getComponentForPath }) => (
       // The pathname is used to retrieve the component for that path
       let Comp = getComponentForPath(props.location.pathname)
       // The component is rendered!
-      return <Comp key={props.location.pathname} {...props} />
+      return [
+        <StickyHeader key="header-home" />,
+        <Comp key={props.location.pathname} {...props} />,
+      ]
     }}
   />
 )
@@ -24,6 +28,7 @@ const App = () => (
     <Router>
       <Routes>{RenderRoutes}</Routes>
     </Router>
+    <Footer />
   </main>
 )
 

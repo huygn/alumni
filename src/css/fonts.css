@@ -1,7 +1,7 @@
 /* font faces */
 
 @font-face {
-  font-family: Avenir_Next;
+  font-family: AvenirNext;
   src: url('./fonts/AvenirNext-Regular.woff') format('woff');
   font-display: fallback;
   font-weight: normal;
@@ -9,7 +9,7 @@
 }
 
 @font-face {
-  font-family: Avenir_Next;
+  font-family: AvenirNext;
   src: url('./fonts/AvenirNext-Italic.woff') format('woff');
   font-display: fallback;
   font-weight: normal;
@@ -17,7 +17,7 @@
 }
 
 @font-face {
-  font-family: Avenir_Next;
+  font-family: AvenirNext;
   src: url('./fonts/AvenirNext-Medium.woff') format('woff');
   font-display: fallback;
   font-weight: 500;
@@ -25,7 +25,7 @@
 }
 
 @font-face {
-  font-family: Avenir_Next;
+  font-family: AvenirNext;
   src: url('./fonts/AvenirNext-DemiBold.woff') format('woff');
   font-display: fallback;
   font-weight: 600;
@@ -33,7 +33,7 @@
 }
 
 @font-face {
-  font-family: Avenir_Next;
+  font-family: AvenirNext;
   src: url('./fonts/AvenirNext-Bold.woff') format('woff');
   font-display: fallback;
   font-weight: 700;
@@ -41,7 +41,7 @@
 }
 
 @font-face {
-  font-family: Avenir_Next;
+  font-family: AvenirNext;
   src: url('./fonts/AvenirNext-Heavy.woff') format('woff');
   font-display: fallback;
   font-weight: 800;
