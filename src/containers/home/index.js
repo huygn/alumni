@@ -12,7 +12,7 @@ const Home = () => {
         </div>
         <div className="text-center">
           <a
-            href="https://daf.ug"
+            href="https://masto.d.foundation/"
             target="_blank"
             rel="noopener noreferrer"
             className="btn bg-primary text-white"
