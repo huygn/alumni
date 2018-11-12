@@ -1,5 +1,6 @@
 import React from 'react'
 import StickyHeader from '@/components/StickyHeader'
+import Footer from '@/components/PageFooter'
 import Alumni from './Alumni'
 
 const Home = () => {
@@ -24,6 +25,7 @@ const Home = () => {
         </div>
       </section>
       <Alumni className="pt-8 pb-24" />
+      <Footer className="bg-white" />
     </div>
   )
 }
