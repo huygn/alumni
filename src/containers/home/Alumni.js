@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, withRouteData } from 'react-static'
+import { withRouteData } from 'react-static'
 import LinkIcon from './LinkIcon'
 
 const Alumni = withRouteData(({ className = '', alumni = [] }) => {
@@ -10,25 +10,23 @@ const Alumni = withRouteData(({ className = '', alumni = [] }) => {
       [key]: (prev[key] || []).concat(curr),
     }
   }, {})
-  console.log(groupByName)
 
-  const col1 = []
-  const col2 = []
+  // console.log(groupByName)
+  // const col1 = []
+  // const col2 = []
   return (
     <section className={`container ${className}`}>
       <h2 className="section-heading text-center mb-6">Alumni Network</h2>
       <p className="lg:w-1/2 mx-auto text-center opacity-75 mb-24">{`The woodland used to be home of hundreds of the Dwarves. They are back and become our supporters and advisors. The alumni network keeps growing.`}</p>
       <div>
         {Object.keys(groupByName).map(key => (
-          <div key={key}>
-            <strong>{key}</strong>
-            <ul className="list-reset">
+          <div key={key} className="mb-6 mx-auto" style={{ maxWidth: 460 }}>
+            <strong className="font-semibold text-xl text-dusty-gray block py-1 px-3 bg-alabaster rounded mt-4">
+              {key}
+            </strong>
+            <ul className="list-reset mx-3">
               {groupByName[key].map((e, i) => (
-                <li
-                  key={i}
-                  className="py-4 border-b border-grey-light"
-                  style={{ maxWidth: 400 }}
-                >
+                <li key={i} className="py-4 border-b border-grey-light">
                   <strong className="block text-xl font-semibold leading-tight mb-1">
                     {e.name}
                   </strong>
