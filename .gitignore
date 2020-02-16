@@ -7,6 +7,7 @@ node_modules
 # production
 /dist
 /tmp
+/.footer-html.js
 
 # netlify functions build
 .functions

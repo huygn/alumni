@@ -1,4 +1,4 @@
-import glob from 'glob'
+import glob from 'glob-all'
 import PurgecssPlugin from 'purgecss-webpack-plugin'
 import PurgecssWhitelister from 'purgecss-whitelister'
 
@@ -10,14 +10,14 @@ class TailwindExtractor {
 
 export default new PurgecssPlugin({
   // Specify the locations of any files you want to scan for class names.
-  paths: glob.sync('src/**/*.js'),
+  paths: glob.sync(['./.footer-html.js', 'src/**/*.js']),
   extractors: [
     {
       extractor: TailwindExtractor,
       extensions: ['js', 'jsx'],
     },
   ],
-  whitelist: ['html', 'body'].concat(
+  whitelist: ['html', 'body', 'opacity-25'].concat(
     PurgecssWhitelister(['src/css/nprogress.css'])
   ),
   whitelistPatterns: [
